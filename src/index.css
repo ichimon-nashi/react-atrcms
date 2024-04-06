@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	font-family: "Open Sans", sans-serif;
+	--darkGray: #3c4347;
+	--gray: #525d61;
+	--green: #8fd400;
+	--red: #ff0b27;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	/* outline: 0.1px dotted red; */
+}
+
+html {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	margin: auto;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+}
+
+img {
+	pointer-events: none;
+}
+
+main {
+	background: #3e494e;
+	color: white;
+}
+
+.gradientTitleColor {
+	background: linear-gradient(
+		to bottom,
+		rgb(168, 166, 166) 0%,
+		rgb(69, 79, 83) 100%
+	);
+}
+
+/* Header */
+.headerTitle {
+	text-align: left;
+	font-weight: 700;
+	padding: 0.5rem 0 0.5rem 3rem;
+}
+
+.centerText {
+	text-align: center;
+}
+
+.flexDisplay_column {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.flexDisplay_row {
+	display: flex;
+	flex-direction: row;
+}
+
+/* Side Panel (cabin signs) */
+.sidePanel {
+	width: 20vw;
+}
+
+button {
+	padding: 0;
+	/* border: 0; */
+	cursor: pointer;
+	background: var(--gray);
+}
+
+.sidePanelImg {
+	max-width: 100%;
+}
+
+.lavSignImg {
+	margin-bottom: -3px;
+}
+
+.brightness_container {
+	background: white;
+	color: var(--gray);
+	outline: 0.1px solid var(--darkGray);
+}
+
+.volumeButton {
+	background-color: white;
+}
+
+/* Center Panel */
+.centerPanel {
+	display: grid;
+	height: 100%;
+}
+
+.contentTitle {
+	font-size: 3.5rem;
+	font-weight: 300;
+	height: 5.31rem;
+	text-align: center;
+	text-shadow: 
+  /* White glow */ 0 0 0px #fff, 0 0 5px #fff, 0 0 8px #fff;
+}
+
+.contentImg {
+	width: 7%;
+}
+
+/* Left Portion (center/bottom panel) */
+.innerWrapper {
+	width: 80vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+/* Top Portion (center/bottom/side panel) */
+.outerWrapper {
+	background: rgb(46, 46, 46);
+}
+
+/* Welcome Screen */
+.welcomeScreen {
+	font-size: 1.3rem;
+	height: fit-content;
+}
+
+.welcomeScreen h1:nth-child(2) {
+	margin-top: 1rem;
+}
+
+/* Home Screen */
+.homeLogo {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Lightining Screen */
+.grid {
+	display: grid;
+	grid-auto-flow: column;
+}
+
+.cabinLightButton {
+	width: 100%;
+	aspect-ratio: 1;
+}
+
+.cabinLightOn {
+	background-color: white;
+	color: var(--darkGray) !important;
+}
+
+.cabinLightScreen_topRow {
+	column-gap: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.lightLevelWrapper {
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
+	font-size: 1.25rem;
+}
+
+.controlBtn {
+	font-size: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.controlBtn:disabled {
+	opacity: 0.2;
+}
+
+.placeholderBox {
+	background-color: var(--gray);
+}
+
+/* Temperature Screen */
+.temperatureScreen {
+	background: white;
+	color: black;
+	height: fit-content;
+	border: 15px solid black;
+}
+
+.temperatureScreen h1:nth-child(2) {
+	border-top: 1px dotted black;
+}
+
+.temp {
+	font-size: 2rem;
+	padding: 1rem;
+}
+
+/* Audio Screen */
+.audioList::-webkit-scrollbar {
+	-webkit-appearance: none;
+	width: 16px;
+}
+
+.audioList::-webkit-scrollbar-thumb {
+	border-radius: 8px;
+	background-color: rgba(0, 0, 0, 0.5);
+	box-shadow: 0 0 1px rgba(255, 255, 255, 0.4);
+}
+
+/* Music playing animation */
+.playing-animation {
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	display: block;
+	margin: 4px 2rem;
+	position: relative;
+	color: var(--gray);
+	box-sizing: border-box;
+	animation: animloader 1s linear infinite alternate;
+}
+
+@keyframes animloader {
+	0% {
+		box-shadow: -18px -4px, -6px 0, 6px 0, 18px 0;
+	}
+	33% {
+		box-shadow: -18px 0px, -6px -4px, 6px 0, 18px 0;
+	}
+	66% {
+		box-shadow: -18px 0px, -6px 0, 6px -4px, 18px 0;
+	}
+	100% {
+		box-shadow: -18px 0, -6px 0, 6px 0, 18px -4px;
+	}
+}
+
+/* Parameter Screen */
+.parameterButton {
+	padding: 0.7rem 5.5rem;
+	margin: 1.3rem;
+	border: 1px solid white;
+}
+
+/* Maintenance Screen */
+.maintenanceList {
+	font-size: 1.3rem;
+	line-height: 2rem;
+}
+
+.maintenanceList li:nth-of-type(6) {
+	margin-top: 1.5rem;
+}
+
+.scrollbar::-webkit-scrollbar {
+	width: 4rem;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+	background: white;
+}

@@ -14,7 +14,7 @@
 * {
 	box-sizing: border-box;
 	margin: 0;
-	/* outline: 0.1px dotted red; */
+	outline: 0.1px dotted red;
 }
 
 html {
@@ -145,6 +145,7 @@ button {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+	height: 100%;
 }
 
 /* Lightining Screen */
@@ -270,4 +271,28 @@ button {
 
 .scrollbar::-webkit-scrollbar-thumb {
 	background: white;
+}
+
+/* Media Query Tablet */
+@media screen and (max-width: 1200px) {
+	.homeLogo {
+		height: fit-content;
+		margin: auto;
+	}
+	.contentTitle {
+		font-size: 2.5rem;
+	}
+	.parameterButton {
+		padding: 1rem 4rem;
+		font-size: 0.8rem;
+		margin: 1.1rem 1.3rem;
+	}
+	.maintenanceList {
+		font-size: 1rem;
+		line-height: 1.5rem;
+	}
+	.maintenanceButton {
+		padding: 1.2rem;
+		bottom: 18%;
+	}
 }

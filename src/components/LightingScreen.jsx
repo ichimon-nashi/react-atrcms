@@ -41,7 +41,7 @@ const LightingScreen = () => {
 		return (
 			<button
 				key={item.id}
-				className={`cabinLightButton text-xs md:text-base lg:text-lg p-2 lg:p-4 ${
+				className={`cabinLightButton text-xs md:text-[0.7rem] lg:text-lg p-2 lg:p-4 ${
 					cabinLight[item.name] ? "cabinLightOn" : "gradientTitleColor "
 				}`}
 				onClick={() => handleCabinLight(item.name)}

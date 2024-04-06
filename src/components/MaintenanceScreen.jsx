@@ -38,7 +38,7 @@ const MaintenanceScreen = () => {
                 <li>NETWORK LINK STATUS:</li>
                 <li>CABIN TEMP. RECEPTION:</li>
             </ul>
-            <ul className='maintenanceList ml-32'>
+            <ul className='maintenanceList md:ml-20 lg:ml-32'>
                 <li>CMS FAP</li>
                 <li>046-10641-990</li>
                 <li>10261415001</li>
@@ -51,7 +51,7 @@ const MaintenanceScreen = () => {
                 <li>GbE: 0 _ CDU: 0 0 0</li>
                 <li>OK ({cabinTempReception})</li>
             </ul>
-            <button className="gradientTitleColor absolute px-[2.5rem] py-[1.7rem] m-[1.3rem] right-[20%] bottom-[14%]">Advanced...</button>
+            <button className="maintenanceButton gradientTitleColor absolute px-[2.5rem] py-[1.7rem] m-[1.3rem] right-[20%] bottom-[15%]">Advanced...</button>
         </div>
     )
 }

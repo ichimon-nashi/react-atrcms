@@ -101,8 +101,8 @@ import pa_cppLandB from "../assets/audio/pa0607b.mp3";
 import pa_cppWaterA from "../assets/audio/pa0608a.mp3";
 import pa_cppWaterB from "../assets/audio/pa0608b.mp3";
 import pa_cppWaterC from "../assets/audio/pa0608c.mp3";
-import music_boardingA from "../assets/audio/boardingA.mp3";
-import music_boardingB from "../assets/audio/boardingB.mp3";
+import music_boardingA from "../assets/audio/boardinga.mp3";
+import music_boardingB from "../assets/audio/boardingb.mp3";
 
 export const AudioData = [{
     id: 0,

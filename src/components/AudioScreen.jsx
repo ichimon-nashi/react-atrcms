@@ -58,22 +58,24 @@ const AudioScreen = () => {
 		<div className="audioPanel w-full flex flex-col justify-evenly gap-y-2">
 			<div className="grid grid-cols-2 gap-2">
 				<div className="col-span-1 bg-theme-gray">
-					<h3 className="gradientTitleColor text-2xl p-4 lg:text-2xl text-center md:text-base">ANNOUNCEMENT SELECTION</h3>
-					<ul className="scrollbar text-2xl audioList max-h-[32vh] divide-y-2 divide-theme-gray-light overflow-y-auto  md:text-base lg:text-2xl">
+					<h3 className="gradientTitleColor audioHeader text-2xl p-4 lg:text-2xl text-center">ANNOUNCEMENT SELECTION</h3>
+					<ul className="scrollbar text-2xl audioList max-h-[32vh] divide-y-2 divide-theme-gray-light overflow-y-auto lg:text-2xl">
 						{audioListByCategory("pa")}
 					</ul>
 				</div>
 				<div className="col-span-1 bg-theme-gray">
-					<h3 className="gradientTitleColor lg:text-2xl p-4 text-center md:text-base">MUSIC SELECTION</h3>
-					<ul className="scrollbar text-2xl audioList max-h-[32vh] md:text-base lg:text-2xl divide-y-2 divide-theme-gray-light overflow-y-auto">
+					<h3 className="gradientTitleColor audioHeader lg:text-2xl p-4 text-center">MUSIC SELECTION</h3>
+					<ul className="scrollbar text-2xl audioList max-h-[32vh] lg:text-2xl divide-y-2 divide-theme-gray-light overflow-y-auto">
 						{audioListByCategory("music")}
 					</ul>
 				</div>
 			</div>
-			<div className="flex items-stretch justify-between">
+			{/* Playback controls */}
+			<div className="flex items-stretch items-center justify-between">
 				<div className="flex h-full items-stretch gap-2 ml-28">
+					{/* Play button */}
 					<button
-						className={`text-3xl xl:text-5xl h-full aspect-square p-2 md:h-[70%] lg:h-[100%] flex items-center justify-center ${
+						className={`audioControlButton text-3xl xl:text-5xl h-[fit-content] aspect-square p-2 lg:h-[100%] flex items-center justify-center ${
 							activeControlBtn === "play"
 								? "bg-white text-theme-gray"
 								: "gradientTitleColor"
@@ -83,8 +85,9 @@ const AudioScreen = () => {
 					>
 						<BsPlayFill />
 					</button>
+					{/* Pause button */}
 					<button
-						className={`text-3xl xl:text-5xl h-full aspect-square p-2 md:h-[70%] lg:h-[100%] flex items-center justify-center ${
+						className={`audioControlButton text-3xl xl:text-5xl h-[fit-content] aspect-square p-2 lg:h-[100%] flex items-center justify-center ${
 							activeControlBtn === "pause"
 								? "bg-white text-theme-gray"
 								: "gradientTitleColor"
@@ -94,8 +97,9 @@ const AudioScreen = () => {
 					>
 						<BsPauseFill />
 					</button>
+					{/* Stop button */}
 					<button
-						className={`text-3xl xl:text-4xl h-full aspect-square p-2 md:h-[70%] lg:h-[100%] flex items-center justify-center ${
+						className={`audioControlButton text-3xl xl:text-4xl h-[fit-content] aspect-square p-2 lg:h-[100%] flex items-center justify-center ${
 							activeControlBtn === "stop"
 								? "bg-white text-theme-gray"
 								: "gradientTitleColor"
@@ -106,7 +110,7 @@ const AudioScreen = () => {
 					</button>
 				</div>
 
-				<div className="max-w-md  md:h-[70%] lg:h-[100%] flex items-stretch">
+				<div className="volumeContainer max-w-md lg:h-[100%] flex items-stretch">
 					<AudioVolumeController
 						title="Volume"
 						volume={volume}

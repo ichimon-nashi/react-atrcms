@@ -31,13 +31,13 @@ const BrightnessControl = () => {
 			</h3>
 			<div className="brightnessControl flex justify-between">
 				<button
-					className="volumeButton md:p-2 text-2xl lg:text-4xl"
+					className="brightnessButton md:p-2 text-2xl lg:text-4xl"
 					onClick={() => handleChangeBrightness("decrease")}
 				>
 					-
 				</button>
 				<button
-					className="volumeButton md:p-2 text-2xl lg:text-4xl"
+					className="brightnessButton md:p-2 text-2xl lg:text-4xl"
 					onClick={() => handleChangeBrightness("increase")}
 				>
 					+

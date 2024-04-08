@@ -7,7 +7,7 @@ import lavSignImageOn from "../assets/images/lavSign-on.png";
 
 const SidePanel = ({ cabinSign, handleCabinSign }) => {
 	return (
-		<div className="sidePanel flex flex-col h-full">
+		<div className="sidePanel flex flex-col h-[70vh]">
 			<div className="grid grid-rows-2 h-[45%] divide-y-2 divide-theme-gray-dark">
 				<button
 					onClick={() => handleCabinSign("seatbeltSign")}

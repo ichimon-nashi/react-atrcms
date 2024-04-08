@@ -3,11 +3,11 @@ import cabinLayout from "../assets/images/cabinLayout.png";
 
 const Header = () => {
 	return (
-		<div className="topPanel flex flex-col h-[20vh] md:h-[fit-content]">
-			<h3 className="headerTitle gradientTitleColor h-[5vh] flex items-center text-base">
+		<div className="flex flex-col h-[20vh] ">
+			<h3 className="headerTitle gradientTitleColor max-h-[5vh] flex items-center">
 				SERVICE BUS
 			</h3>
-			<div className="headerImg_container flex justify-between py-2 pl-8 pr-2 h-[15vh]  md:h-[12vh]">
+			<div className="headerImgContainer flex justify-between">
 				<img src={dcacw} className="dcacwImg h-full" />
 				<img
 					src={cabinLayout}

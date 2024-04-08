@@ -14,7 +14,7 @@
 * {
 	box-sizing: border-box;
 	margin: 0;
-	outline: 0.1px dotted red;
+	/* outline: 0.1px dotted red; */
 }
 
 html {
@@ -47,6 +47,11 @@ main {
 }
 
 /* Header */
+.headerImgContainer {
+	padding: 0.5rem 0.5rem 0.5rem 2rem;
+	height: 15vh;
+}
+
 .headerTitle {
 	text-align: left;
 	font-weight: 700;
@@ -130,6 +135,7 @@ button {
 /* Top Portion (center/bottom/side panel) */
 .outerWrapper {
 	background: rgb(46, 46, 46);
+	justify-content: flex-end;
 }
 
 /* Welcome Screen */
@@ -206,13 +212,14 @@ button {
 /* Audio Screen */
 .audioList::-webkit-scrollbar {
 	-webkit-appearance: none;
-	width: 16px;
+	width: 3rem;
 }
 
 .audioList::-webkit-scrollbar-thumb {
 	border-radius: 8px;
 	background-color: rgba(0, 0, 0, 0.5);
 	box-shadow: 0 0 1px rgba(255, 255, 255, 0.4);
+	background: white;
 }
 
 .audioLevelWrapper {
@@ -267,32 +274,37 @@ button {
 	margin-top: 1.5rem;
 }
 
-.scrollbar::-webkit-scrollbar {
-	width: 4rem;
-}
-
-.scrollbar::-webkit-scrollbar-thumb {
-	background: white;
-}
-
 /* Media Query Tablet */
 @media screen and (max-width: 1000px) {
-	.homeLogo {
-		height: fit-content;
-		margin: auto;
+	/* BottomPanel */
+	.brightnessButton {
+		padding: 0rem;
 	}
+	/* CenterPanel */
 	.contentTitle {
-		font-size: 2.5rem;
+		font-size: 3rem;
 	}
 	.contentImg {
 		width: 8%;
 	}
+	/* Home screen */
+	.homeLogo {
+		height: 100%;
+		width: 70%;
+		margin: auto;
+	}
+	/* Welcome Screen */
+	.copyright {
+		font-size: 2.3rem;
+	}
+	/* Lighting Screen */
 	.cabinLightButton {
 		font-size: 0.7rem;
 	}
 	.cabinLightScreen {
-		font-size: 1rem;
+		font-size: 0.8rem;
 	}
+	/* Audio Screen */
 	.audioHeader {
 		font-size: 1rem;
 	}
@@ -303,26 +315,34 @@ button {
 	.audioList {
 		font-size: 1rem;
 		line-height: 1rem;
-		
+		max-height: 27vh;
+	}
+	.audioList::-webkit-scrollbar {
+		width: 1.5rem;
 	}
 	.audioControlButton {
 		height: 4.5rem;
+		width: 4.5rem;
 	}
 	.volumeContainer {
 		height: 4.5rem;
 		width: 30%;
-	}
-	.parameterButton {
-		padding: 1rem 4rem;
 		font-size: 0.8rem;
+	}
+	/* Parameter Screen */
+	.parameterButton {
+		padding: 1rem 2.3rem;
+		font-size: 0.6rem;
 		margin: 1.1rem 1.3rem;
 	}
+	/* Maintenance Screen */
 	.maintenanceList {
-		font-size: 1rem;
+		font-size: 0.7rem;
 		line-height: 1.5rem;
 	}
 	.maintenanceButton {
 		padding: 1.2rem;
-		/* bottom: 15%; */
+		bottom: 12%;
+		font-size: 0.7rem;
 	}
 }

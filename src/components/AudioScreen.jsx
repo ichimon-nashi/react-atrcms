@@ -70,12 +70,13 @@ const AudioScreen = () => {
 					</ul>
 				</div>
 			</div>
+			
 			{/* Playback controls */}
-			<div className="flex items-stretch items-center justify-between">
-				<div className="flex h-full items-stretch gap-2 ml-28">
+			<div className="flex items-center justify-between">
+				<div className="audioControlContainer flex items-top h-[100%] gap-2 ml-28">
 					{/* Play button */}
 					<button
-						className={`audioControlButton text-3xl xl:text-5xl h-[fit-content] aspect-square p-2 lg:h-[100%] flex items-center justify-center ${
+						className={`audioControlButton text-3xl xl:text-5xl aspect-square p-2  flex items-center justify-center ${
 							activeControlBtn === "play"
 								? "bg-white text-theme-gray"
 								: "gradientTitleColor"
@@ -87,7 +88,7 @@ const AudioScreen = () => {
 					</button>
 					{/* Pause button */}
 					<button
-						className={`audioControlButton text-3xl xl:text-5xl h-[fit-content] aspect-square p-2 lg:h-[100%] flex items-center justify-center ${
+						className={`audioControlButton text-3xl xl:text-5xl aspect-square p-2 flex items-center justify-center ${
 							activeControlBtn === "pause"
 								? "bg-white text-theme-gray"
 								: "gradientTitleColor"
@@ -99,7 +100,7 @@ const AudioScreen = () => {
 					</button>
 					{/* Stop button */}
 					<button
-						className={`audioControlButton text-3xl xl:text-4xl h-[fit-content] aspect-square p-2 lg:h-[100%] flex items-center justify-center ${
+						className={`audioControlButton text-3xl xl:text-5xl aspect-square p-2 flex items-center justify-center ${
 							activeControlBtn === "stop"
 								? "bg-white text-theme-gray"
 								: "gradientTitleColor"
@@ -110,7 +111,7 @@ const AudioScreen = () => {
 					</button>
 				</div>
 
-				<div className="volumeContainer max-w-md lg:h-[100%] flex items-stretch">
+				<div className="volumeContainer max-w-md lg:h-[100%] flex">
 					<AudioVolumeController
 						title="Volume"
 						volume={volume}

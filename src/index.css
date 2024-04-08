@@ -114,7 +114,9 @@ button {
 }
 
 .contentImg {
-	width: 7%;
+	width: 6.7%;
+	height: 90%;
+	aspect-ratio: 1;
 }
 
 /* Left Portion (center/bottom panel) */
@@ -169,13 +171,6 @@ button {
 	margin-bottom: 1rem;
 }
 
-.lightLevelWrapper {
-	display: flex;
-	align-items: center;
-	gap: 0.25rem;
-	font-size: 1.25rem;
-}
-
 .controlBtn {
 	font-size: 2rem;
 	display: flex;
@@ -220,6 +215,12 @@ button {
 	box-shadow: 0 0 1px rgba(255, 255, 255, 0.4);
 }
 
+.audioLevelWrapper {
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
+	font-size: 1.25rem;
+}
 
 /* Music playing animation */
 .playing-animation {
@@ -275,13 +276,16 @@ button {
 }
 
 /* Media Query Tablet */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1000px) {
 	.homeLogo {
 		height: fit-content;
 		margin: auto;
 	}
 	.contentTitle {
 		font-size: 2.5rem;
+	}
+	.contentImg {
+		width: 8%;
 	}
 	.cabinLightButton {
 		font-size: 0.7rem;
@@ -292,14 +296,21 @@ button {
 	.audioHeader {
 		font-size: 1rem;
 	}
+	.audioControlContainer {
+		margin-left: 2rem;
+		height: fit-content;
+	}
 	.audioList {
 		font-size: 1rem;
+		line-height: 1rem;
+		
 	}
-	.audiControlButton {
-		height: 70%;
+	.audioControlButton {
+		height: 4.5rem;
 	}
 	.volumeContainer {
-		height: 70%;
+		height: 4.5rem;
+		width: 30%;
 	}
 	.parameterButton {
 		padding: 1rem 4rem;
@@ -312,6 +323,6 @@ button {
 	}
 	.maintenanceButton {
 		padding: 1.2rem;
-		bottom: 18%;
+		/* bottom: 15%; */
 	}
 }

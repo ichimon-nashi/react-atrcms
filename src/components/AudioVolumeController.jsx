@@ -22,7 +22,7 @@ const AudioVolumeController = ({
 			</button>
 			<div className="flex flex-col gap-y-3 items-center">
 				<p className="">{title}</p>
-				<div className="lightLevelWrapper">
+				<div className="audioLevelWrapper">
 					<div className="flex">
 						{Array.from({ length: volumeLevels }, (_, i) => i + 1).map(
 							(level) => (

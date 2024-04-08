@@ -53,12 +53,13 @@ const LightingScreen = () => {
 
 	return (
 		<div className="cabinLightScreen lg:px-4 text-xs lg:text-xl xl:text-xl">
-			<div className="flex flex-col gap-5">
-				<div className="grid grid-cols-7 gap-2 md:gap-4 lg:gap-5 items-stretch">
+			<div className="flex flex-col gap-5 ">
+				<div className="grid grid-cols-7 gap-2 md:gap-3 lg:gap-5">
+					{/* items-stretch */}
 					{cabinLightButton}
 				</div>
 
-				<div className="grid grid-cols-7 gap-2 md:gap-4 lg:gap-5">
+				<div className="grid grid-cols-7 gap-2 md:gap-3 lg:gap-5">
 					<div className="flex col-span-3">
 						<LightLevelController
 							title="Cabin Lateral"
@@ -77,7 +78,7 @@ const LightingScreen = () => {
 					</div>
 				</div>
 
-				<div className="grid grid-cols-7 gap-2 md:gap-4 lg:gap-5">
+				<div className="grid grid-cols-7 gap-2 md:gap-3 lg:gap-5">
 					<div className="gradientTitleColor placeholderBox py-6"></div>
 					<div className="gradientTitleColor placeholderBox py-6"></div>
 					<div className="gradientTitleColor placeholderBox py-6"></div>

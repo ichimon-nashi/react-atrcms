@@ -98,8 +98,8 @@ function App() {
 	return (
 		<main>
 			<Header />
-			<div className="outerWrapper flex flex-col h-[80lvh]">
-				<div className="topPortion flex h-[68vh]">
+			<div className="outerWrapper flex flex-col h-[80dvh]">
+				<div className="topPortion flex h-[d68vh]">
 					<div className="innerWrapper">
 						<CenterPanel isActiveMenu={isActiveMenu} />
 					</div>

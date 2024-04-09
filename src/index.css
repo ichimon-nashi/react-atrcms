@@ -302,10 +302,11 @@ button {
 	}
 	/* Lighting Screen */
 	.cabinLightButton {
-		font-size: 0.7rem;
+		font-size: 0.6rem;
+		height: 90%;
 	}
 	.cabinLightScreen {
-		font-size: 0.8rem;
+		font-size: 0.7rem;
 	}
 	/* Audio Screen */
 	.audioHeader {
@@ -318,7 +319,7 @@ button {
 	.audioList {
 		font-size: 1rem;
 		line-height: 1rem;
-		max-height: 27vh;
+		max-height: 27dvh;
 	}
 	.audioList::-webkit-scrollbar {
 		width: 1.5rem;
@@ -329,7 +330,7 @@ button {
 	}
 	.volumeContainer {
 		height: 4.5rem;
-		width: 30%;
+		width: fit-content;
 		font-size: 0.8rem;
 	}
 	/* Parameter Screen */

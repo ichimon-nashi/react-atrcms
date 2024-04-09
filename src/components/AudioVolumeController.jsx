@@ -12,7 +12,7 @@ const AudioVolumeController = ({
     }
 
 	return (
-		<div className="gradientTitleColor flex items-center justify-center md:gap-2 lg:gap-16 w-full bg-theme-gray p-4">
+		<div className="gradientTitleColor flex items-center justify-center md:gap-2 lg:gap-16 w-full text-base bg-theme-gray p-4">
 			<button
 				onClick={() => changeAudioVolume("decrease", volumeLevels)}
 				className="bg-transparent controlBtn decreaseLightLevelBtn p-2 lg:px-4"

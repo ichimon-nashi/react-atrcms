@@ -166,7 +166,6 @@ button {
 }
 
 .cabinLightButton {
-	width: 100%;
 	aspect-ratio: 1;
 }
 
@@ -317,17 +316,17 @@ button {
 		height: fit-content;
 	}
 	.audioList {
-		font-size: 1rem;
+		font-size: 0.7rem;
 		line-height: 1rem;
-		max-height: 27dvh;
+		max-height: 30dvh;
 	}
 	.audioList::-webkit-scrollbar {
 		width: 1.5rem;
 	}
 	.audioControlButton {
 		min-height: 4.5rem;
+		height: 6rem;
 		min-width: 4.5rem;
-		
 	}
 	.volumeContainer {
 		height: 4.5rem;

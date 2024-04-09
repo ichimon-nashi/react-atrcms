@@ -14,7 +14,7 @@ const CenterPanel = ({ isActiveMenu }) => {
     if (isActiveMenu === "lighting") {
         contentPage = (
             <>
-                <div className="flex justify-center max-h-[5.31rem] items-center">
+                <div className="flex justify-center max-h-[6.31rem] items-center">
                     <h1 className="contentTitle items-center flex">CABIN LIGHTING</h1>
                     <img className="contentImg" src={menuData[2].src} />
                 </div>
@@ -24,7 +24,7 @@ const CenterPanel = ({ isActiveMenu }) => {
     } else if (isActiveMenu === "temperature") {
         contentPage = (
             <>
-                <div className="flex justify-center max-h-[5.31rem] items-center">
+                <div className="flex justify-center max-h-[6.31rem] items-center">
                     <h1 className="contentTitle items-center flex">{isActiveMenu.toUpperCase()}</h1>
                     <img className="contentImg" src={menuData[3].src} />
                 </div>
@@ -34,7 +34,7 @@ const CenterPanel = ({ isActiveMenu }) => {
     } else if (isActiveMenu === "audio") {
         contentPage = (
             <>
-                <div className="flex justify-center max-h-[5.31rem] items-center">
+                <div className="flex justify-center max-h-[6.31rem] items-center">
                     <h1 className="contentTitle items-center flex">{isActiveMenu.toUpperCase()}</h1>
                     <img className="contentImg" src={menuData[4].src} />
                 </div>
@@ -44,7 +44,7 @@ const CenterPanel = ({ isActiveMenu }) => {
     } else if (isActiveMenu === "parameter") {
         contentPage = (
             <>
-                <div className="flex justify-center max-h-[5.31rem] items-center">
+                <div className="flex justify-center max-h-[6.31rem] items-center">
                     <h1 className="contentTitle items-center flex">{isActiveMenu.toUpperCase()}</h1>
                     <img className="contentImg" src={menuData[7].src} />
                 </div>
@@ -54,7 +54,7 @@ const CenterPanel = ({ isActiveMenu }) => {
     } else if (isActiveMenu === "maintenance") {
         contentPage = (
             <>
-                <div className="flex justify-center max-h-[5.31rem] items-center">
+                <div className="flex justify-center max-h-[6.31rem] items-center">
                     <h1 className="contentTitle items-center flex">{isActiveMenu.toUpperCase()}</h1>
                     <img className="contentImg" src={menuData[8].src} />
                 </div>

@@ -41,7 +41,7 @@ const LightingScreen = () => {
 		return (
 			<button
 				key={item.id}
-				className={`cabinLightButton text-xs lg:text-lg p-2 lg:p-4 ${
+				className={`cabinLightButton text-xs lg:text-base p-2 lg:p-4 ${
 					cabinLight[item.name] ? "cabinLightOn" : "gradientTitleColor "
 				}`}
 				onClick={() => handleCabinLight(item.name)}
@@ -52,7 +52,7 @@ const LightingScreen = () => {
 	});
 
 	return (
-		<div className="cabinLightScreen lg:px-4 text-xs lg:text-xl xl:text-xl">
+		<div className="cabinLightScreen lg:px-4 text-xl lg:text-base xl:text-xl">
 			<div className="flex flex-col gap-5 ">
 				<div className="grid grid-cols-7 gap-2 md:gap-3 lg:gap-5">
 					{/* items-stretch */}

@@ -14,7 +14,7 @@
 * {
 	box-sizing: border-box;
 	margin: 0;
-	outline: 0.1px dotted red;
+	/* outline: 0.1px dotted red; */
 }
 
 html {
@@ -298,7 +298,7 @@ button {
 	}
 	/* Welcome Screen */
 	.copyright {
-		font-size: 2.3rem;
+		font-size: 3.2rem;
 	}
 	/* Lighting Screen */
 	.cabinLightButton {
@@ -327,6 +327,7 @@ button {
 	.audioControlButton {
 		min-height: 4.5rem;
 		min-width: 4.5rem;
+		
 	}
 	.volumeContainer {
 		height: 4.5rem;
@@ -335,18 +336,18 @@ button {
 	}
 	/* Parameter Screen */
 	.parameterButton {
-		padding: 1rem 2.3rem;
-		font-size: 0.6rem;
+		padding: 1rem 3rem;
+		font-size: 0.8rem;
 		margin: 1.1rem 1.3rem;
 	}
 	/* Maintenance Screen */
 	.maintenanceList {
-		font-size: 0.7rem;
+		font-size: 1rem;
 		line-height: 1.5rem;
 	}
 	.maintenanceButton {
 		padding: 1.2rem;
 		bottom: 12%;
-		font-size: 0.7rem;
+		font-size: 1rem;
 	}
 }

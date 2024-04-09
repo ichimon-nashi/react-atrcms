@@ -59,13 +59,13 @@ const AudioScreen = () => {
 			<div className="grid grid-cols-2 gap-2">
 				<div className="col-span-1 bg-theme-gray">
 					<h3 className="gradientTitleColor audioHeader text-2xl p-4 lg:text-2xl text-center">ANNOUNCEMENT SELECTION</h3>
-					<ul className="text-2xl audioList max-h-[32dvh] divide-y-2 divide-theme-gray-light overflow-y-auto lg:text-xl">
+					<ul className="text-2xl audioList max-h-[29dvh] divide-y-2 divide-theme-gray-light overflow-y-auto lg:text-xl">
 						{audioListByCategory("pa")}
 					</ul>
 				</div>
 				<div className="col-span-1 bg-theme-gray">
 					<h3 className="gradientTitleColor audioHeader lg:text-2xl p-4 text-center">MUSIC SELECTION</h3>
-					<ul className="text-2xl audioList max-h-[32dvh] lg:text-xl divide-y-2 divide-theme-gray-light overflow-y-auto">
+					<ul className="text-2xl audioList max-h-[29dvh] lg:text-xl divide-y-2 divide-theme-gray-light overflow-y-auto">
 						{audioListByCategory("music")}
 					</ul>
 				</div>

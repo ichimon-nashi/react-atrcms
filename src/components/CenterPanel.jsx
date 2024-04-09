@@ -76,7 +76,7 @@ const CenterPanel = ({ isActiveMenu }) => {
     } 
 
     return (
-        <section className="centerPanel p-4">
+        <section className="centerPanel p-2">
             {contentPage}
         </section>
     )

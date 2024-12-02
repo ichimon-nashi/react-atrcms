@@ -104,6 +104,8 @@ import pa_cppWaterB from "../assets/audio/pa0608b.mp3";
 import pa_cppWaterC from "../assets/audio/pa0608c.mp3";
 import music_boardingA from "../assets/audio/boardinga.mp3";
 import music_boardingB from "../assets/audio/boardingb.mp3";
+import cny_music from "../assets/audio/cnymusic.mp3";
+import xmas_music from "../assets/audio/xmasmusic.mp3";
 
 export const AudioData = [{
     id: 0,
@@ -182,12 +184,22 @@ export const AudioData = [{
     src: pa_cppWaterC,
 },{
     id: 15,
-    trackname: "Boarding Music A",
+    trackname: "Boarding Music A.mp3",
     category: "music",
     src: music_boardingA,
 },{
     id: 16,
-    trackname: "Boarding Music B",
+    trackname: "Boarding Music B.mp3",
     category: "music",
     src: music_boardingB,
+},{
+    id: 17,
+    trackname: "Chinese New Year Music.mp3",
+    category: "music",
+    src: cny_music,
+},{
+    id: 18,
+    trackname: "Christmas Music.mp3",
+    category: "music",
+    src: xmas_music,
 }]

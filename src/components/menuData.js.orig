@@ -102,10 +102,15 @@ import pa_cppLandB from "../assets/audio/pa0607b.mp3";
 import pa_cppWaterA from "../assets/audio/pa0608a.mp3";
 import pa_cppWaterB from "../assets/audio/pa0608b.mp3";
 import pa_cppWaterC from "../assets/audio/pa0608c.mp3";
+<<<<<<< HEAD
 import music_boardingA from "../assets/audio/boardinga.mp3";
 import music_boardingB from "../assets/audio/boardingb.mp3";
 import cny_music from "../assets/audio/cnymusic.mp3";
 import xmas_music from "../assets/audio/xmasmusic.mp3";
+=======
+import music_boardingA from "../assets/audio/boardingA.mp3";
+import music_boardingB from "../assets/audio/boardingB.mp3";
+>>>>>>> refs/remotes/origin/main
 
 export const AudioData = [{
     id: 0,
@@ -184,11 +189,16 @@ export const AudioData = [{
     src: pa_cppWaterC,
 },{
     id: 15,
+<<<<<<< HEAD
     trackname: "Boarding Music A.mp3",
+=======
+    trackname: "Boarding Music A",
+>>>>>>> refs/remotes/origin/main
     category: "music",
     src: music_boardingA,
 },{
     id: 16,
+<<<<<<< HEAD
     trackname: "Boarding Music B.mp3",
     category: "music",
     src: music_boardingB,
@@ -203,3 +213,9 @@ export const AudioData = [{
     category: "music",
     src: xmas_music,
 }]
+=======
+    trackname: "Boarding Music B",
+    category: "music",
+    src: music_boardingB,
+}]
+>>>>>>> refs/remotes/origin/main

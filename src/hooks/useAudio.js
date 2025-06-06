@@ -34,12 +34,18 @@ const useAudio = (audioFile, autoPlay = false) => {
 	const [volume, setVolume] = useState(defaultAudioVolumeLevel);
 	const [playing, setPlaying] = useState(false);
 	const [audioInfo, setAudioInfo] = useState(parseAudioInfo(audioFile));
+	const [playingAudioInfo, setPlayingAudioInfo] = useState(null); // Track what's actually playing
 
 	const changeAudio = (file) => {
 		if (file.src) {
-			pauseAudio();
-			setAudio(parseAudio(file));
+			// Always update the audioInfo to show selection
 			setAudioInfo(parseAudioInfo(file));
+			
+			// Only change the actual audio object if nothing is currently playing
+			// AND it's a different track
+			if (!playing && audioInfo?.id !== file.id) {
+				setAudio(parseAudio(file));
+			}
 		}
 	};
 
@@ -59,12 +65,16 @@ const useAudio = (audioFile, autoPlay = false) => {
 			pauseAudio();
 			setAudio(null);
 			setAudioInfo(null);
+			setPlayingAudioInfo(null); // Clear playing info when stopped
 		}
 	};
 
 	const reloadAudio = () => {
-		pauseAudio();
-		audio.load();
+		setPlaying(false);
+		if (audio) {
+			audio.load();
+		}
+		// Don't clear playingAudioInfo here since track just ended, not stopped
 	};
 
 	const togglePlay = () => {
@@ -72,9 +82,11 @@ const useAudio = (audioFile, autoPlay = false) => {
 	};
 
 	const playAudio = () => {
-		if (audio) {
+		if (audio && !playing && audioInfo) {
 			audio.play();
 			setPlaying(true);
+			// Create a copy of audioInfo to avoid reference issues
+			setPlayingAudioInfo({ ...audioInfo });
 		}
 	};
 
@@ -82,6 +94,7 @@ const useAudio = (audioFile, autoPlay = false) => {
 		if (audio) {
 			audio.pause();
 			setPlaying(false);
+			// Don't clear playingAudioInfo - just paused, not stopped
 		}
 	};
 
@@ -116,6 +129,7 @@ const useAudio = (audioFile, autoPlay = false) => {
 		resetAudio,
 		togglePlay,
 		audioInfo,
+		playingAudioInfo,
 	};
 };
 

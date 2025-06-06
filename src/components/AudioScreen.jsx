@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { BsFillSquareFill, BsPauseFill, BsPlayFill } from "react-icons/bs";
-import useAudio from "../hooks/useAudio";
 import { AudioData } from "./menuData";
 import AudioVolumeController from "./AudioVolumeController";
 
-const AudioScreen = () => {
+const AudioScreen = ({ audioControls }) => {
 	const [activeControlBtn, setActiveControlBtn] = useState("stop");
+	
+	// Destructure audio controls from props instead of using local hook
 	const {
 		playing,
 		changeAudio,
@@ -15,7 +16,8 @@ const AudioScreen = () => {
 		playAudio,
 		pauseAudio,
 		audioInfo,
-	} = useAudio();
+		playingAudioInfo,
+	} = audioControls;
 
 	const handleClickPlay = () => {
 		setActiveControlBtn("play");
@@ -36,17 +38,20 @@ const AudioScreen = () => {
 		return AudioData.filter((audio) => audio.category === category).map(
 			(item) => {
 				const activeTrack = audioInfo?.id === item.id;
+				const playingTrack = playingAudioInfo?.id === item.id;
+				
+				// Safely handle track name
+				const trackName = item.trackname ? item.trackname.toString() : `Track ${item.id}`;
+				
 				return (
 					<li
-						className={`flex items-center justify-between p-3 cursor-pointer ${
-							activeTrack ? "bg-white text-gray-800" : ""
-						}`}
+						className={activeTrack ? "flex items-center justify-between p-3 cursor-pointer bg-white text-gray-800" : "flex items-center justify-between p-3 cursor-pointer"}
 						key={item.id}
 						onClick={() => changeAudio(item)}
 					>
-						<span className="truncate">{item.trackname}</span>
-						{activeTrack && playing && (
-							<span className="playing-animation relative -right-3 scale-75 lg:scale-100"></span>
+						<span className="truncate">{trackName}</span>
+						{playingTrack && playing && (
+							<span className="text-red-500">🔊</span>
 						)}
 					</li>
 				);
@@ -82,7 +87,7 @@ const AudioScreen = () => {
 								: "gradientTitleColor"
 						}`}
 						onClick={handleClickPlay}
-						disabled={!(audioInfo && !playing)}
+						disabled={!audioInfo || playing}
 					>
 						<BsPlayFill />
 					</button>

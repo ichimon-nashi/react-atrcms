@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { menuData } from "./components/menuData";
 import Header from "./components/Header";
 import SidePanel from "./components/SidePanel";
@@ -6,6 +6,7 @@ import BottomPanel from "./components/BottomPanel";
 import CenterPanel from "./components/CenterPanel";
 import audio from "./assets/audio/cabinChime.mp3";
 import useLongPress from "./hooks/useLongPress";
+import useAudio from "./hooks/useAudio";
 
 function App() {
 	const [cabinSign, setCabinSign] = useState({
@@ -15,6 +16,19 @@ function App() {
 	});
 
 	const [isActiveMenu, setIsActiveMenu] = useState("home");
+	
+	// Audio state moved to App level to persist across screen changes
+	const audioControls = useAudio();
+	
+	// Create a ref to store the preloaded audio
+	const cabinChimeRef = useRef(null);
+
+	// Preload the audio file when component mounts
+	useEffect(() => {
+		cabinChimeRef.current = new Audio(audio);
+		cabinChimeRef.current.volume = 0.3;
+		cabinChimeRef.current.preload = 'auto';
+	}, []);
 
 	const defaultOptions = {
 		shouldPreventDefault: true,
@@ -82,11 +96,14 @@ function App() {
 				[pressedSign]: !cabinSign[pressedSign],
 			};
 		});
-		// plays chime audio file during sign toggle (except lavSign)
-		const cabinChime = new Audio(audio);
-		cabinChime.volume = 0.3;
-		{
-			pressedSign !== "lavSign" && cabinChime.play();
+		
+		// Play chime audio file during sign toggle (except lavSign)
+		if (pressedSign !== "lavSign" && cabinChimeRef.current) {
+			// Reset the audio to the beginning and play
+			cabinChimeRef.current.currentTime = 0;
+			cabinChimeRef.current.play().catch(error => {
+				console.warn('Audio play failed:', error);
+			});
 		}
 	}
 
@@ -101,7 +118,7 @@ function App() {
 			<div className="outerWrapper flex flex-col h-[80dvh]">
 				<div className="topPortion flex h-[d68vh]">
 					<div className="innerWrapper">
-						<CenterPanel isActiveMenu={isActiveMenu} />
+						<CenterPanel isActiveMenu={isActiveMenu} audioControls={audioControls} />
 					</div>
 					<SidePanel cabinSign={cabinSign} handleCabinSign={handleCabinSign} />
 				</div>

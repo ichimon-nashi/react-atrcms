@@ -7,7 +7,7 @@ import AudioScreen from "./AudioScreen";
 import ParameterScreen from "./ParameterScreen";
 import MaintenanceScreen from "./MaintenanceScreen";
 
-const CenterPanel = ({ isActiveMenu }) => {
+const CenterPanel = ({ isActiveMenu, audioControls }) => {
 
     let contentPage;
 
@@ -38,7 +38,7 @@ const CenterPanel = ({ isActiveMenu }) => {
                     <h1 className="contentTitle items-center flex">{isActiveMenu.toUpperCase()}</h1>
                     <img className="contentImg" src={menuData[4].src} />
                 </div>
-                <AudioScreen />
+                <AudioScreen audioControls={audioControls} />
             </>
         )
     } else if (isActiveMenu === "parameter") {
